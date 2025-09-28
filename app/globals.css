@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+  --background: oklch(100% 0.00011 271.152);
+  --foreground: oklch(20.463% 0.00002 271.152);
+  --primary-clr: oklch(29.403% 0.0789 252.054);
+  --primary-clr-2: oklch(21.746% 0.05238 249.711);
+  --secondary-clr: oklch(89.749% 0.12718 89.114);
+  --secondary-clr-1: oklch(76.042% 0.10646 89.451);
+  --gray-clr: oklch(95.514% 0.00011 271.152);
+  --gray-clr-2: oklch(80.152% 0.00009 271.152);
+}
+
+@theme inline {
+  /* colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primaryClr: var(--primary-clr);
+  --color-primaryClr-2: var(--primary-clr-2);
+  --color-secondaryClr: var(--secondary-clr);
+  --color-secondaryClr-1: var(--secondary-clr-1);
+  --color-secondaryClr-2: var(--secondary-clr-2);
+  --color-grayClr: var(--gray-clr);
+  --color-grayClr-2: var(--gray-clr);
+  /* Typography */
+  --font-rubik: var(--font-rubik);
+  --font-dmSans: var(--font-dmSans);
+}
+
+body {
+  @apply font-dmSans;
+}
