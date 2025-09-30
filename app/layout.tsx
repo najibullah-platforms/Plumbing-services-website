@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const rubik = localFont({
@@ -35,7 +37,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.variable} ${rubik.variable} antialiased`}>
+        <Header />
         <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   );

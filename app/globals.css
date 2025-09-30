@@ -7,6 +7,7 @@
   --primary-clr-2: oklch(21.746% 0.05238 249.711);
   --secondary-clr: oklch(89.749% 0.12718 89.114);
   --secondary-clr-1: oklch(76.042% 0.10646 89.451);
+  --secondary-clr-2: oklch(70% 0.1 90); /* ✅ define this or remove */
   --gray-clr: oklch(95.514% 0.00011 271.152);
   --gray-clr-2: oklch(80.152% 0.00009 271.152);
 }
@@ -21,7 +22,8 @@
   --color-secondaryClr-1: var(--secondary-clr-1);
   --color-secondaryClr-2: var(--secondary-clr-2);
   --color-grayClr: var(--gray-clr);
-  --color-grayClr-2: var(--gray-clr);
+  --color-grayClr-2: var(--gray-clr-2);
+
   /* Typography */
   --font-rubik: var(--font-rubik);
   --font-dmSans: var(--font-dmSans);
@@ -29,4 +31,40 @@
 
 body {
   @apply font-dmSans;
+}
+
+@layer utilities {
+  .container {
+    @apply px-4 mx-auto sm:px-8 lg:px-14 xl:max-w-[1180px];
+  }
+  .link {
+    @apply relative uppercase py-2.5 after:absolute after:bottom-0 after:bg-primaryClr after:w-full after:h-0.5 after:left-1/2 hover:after:w-full after:transition-all;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+  .subtitle {
+    @apply text-sm uppercase lg:text-base;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-rubik leading-tight;
+  }
+  h1,
+  h2 {
+    @apply font-bold;
+  }
+  p {
+    font-weight: 400;
+    font-size: 0.875rem;
+    font-size: clamp(0.875rem, 0.825rem + 0.25vw, 1.125rem);
+  }
+}
+
+@layer components {
+  .primary-btn {
+    @apply px-6 py-2.5 bg-secondaryClr text-black font-bold uppercase rounded-[50px] md:px-8 md:py-3.5 hover:bg-gray-900 hover:text-white transition-colors;
+  }
 }
